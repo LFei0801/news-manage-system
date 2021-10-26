@@ -1,0 +1,33 @@
+import {
+  HomeOutlined,
+  IdcardOutlined,
+  TeamOutlined,
+  VerifiedOutlined,
+  UsergroupDeleteOutlined,
+  TrademarkOutlined,
+  ProfileOutlined,
+  SafetyCertificateOutlined,
+  SendOutlined,
+  ClearOutlined,
+  DatabaseOutlined,
+  ContainerOutlined,
+  FileDoneOutlined,
+  CloudUploadOutlined,
+} from "@ant-design/icons";
+
+export const menuIconList = {
+  "/home": <HomeOutlined />,
+  "/user-manage": <IdcardOutlined />,
+  "/user-manage/list": <TeamOutlined />,
+  "/right-manage": <VerifiedOutlined />,
+  "/right-manage/role/list": <UsergroupDeleteOutlined />,
+  "/right-manage/right/list": <TrademarkOutlined />,
+  "/news-manage": <ProfileOutlined />,
+  "/news-manage/add": <SendOutlined />,
+  "/news-manage/draft": <ClearOutlined />,
+  "/news-manage/category": <DatabaseOutlined />,
+  "/audit-manage": <SafetyCertificateOutlined />,
+  "/audit-manage/audit": <ContainerOutlined />,
+  "/audit-manage/list": <FileDoneOutlined />,
+  "/publish-manage": <CloudUploadOutlined />,
+};
