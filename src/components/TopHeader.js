@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { MenuUnfoldOutlined, MenuFoldOutlined, UserOutlined } from "@ant-design/icons";
 import { Layout, Dropdown, Menu, Avatar } from "antd";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
@@ -12,12 +8,7 @@ import { meunList } from "../config/menu-list";
 
 const { Header } = Layout;
 
-function TopHeader({
-  isCollapsed,
-  history,
-  toggleCollasped,
-  location: { pathname },
-}) {
+function TopHeader({ isCollapsed, history, toggleCollasped, location: { pathname } }) {
   const {
     role: { roleName },
     username,
@@ -60,10 +51,7 @@ function TopHeader({
         <span style={{ marginRight: 5 }}>欢迎回来</span>
         <span style={{ marginRight: 10, color: "#1890FF" }}>{username}</span>
         <Dropdown overlay={menu} trigger={["click"]}>
-          <Avatar
-            style={{ backgroundColor: "#f56a00" }}
-            icon={<UserOutlined />}
-          />
+          <Avatar style={{ backgroundColor: "#f56a00" }} icon={<UserOutlined />} />
         </Dropdown>
       </div>
     </Header>
@@ -80,7 +68,4 @@ const mapDispatchToProps = {
   },
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(TopHeader));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TopHeader));

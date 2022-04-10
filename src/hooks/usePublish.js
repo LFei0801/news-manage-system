@@ -22,7 +22,7 @@ export default function usePublish(type) {
   }, [username, type]);
 
   // 通知消息
-  const notificationInfo = (message) => {
+  const notificationInfo = message => {
     notification.info({
       message: "通知",
       description: message,
@@ -31,12 +31,12 @@ export default function usePublish(type) {
   };
 
   // 更新页面
-  const uploadPage = (id) => {
-    setDataSource((prevData) => prevData.filter((data) => data.id !== id));
+  const uploadPage = id => {
+    setDataSource(prevData => prevData.filter(data => data.id !== id));
   };
 
   // 下线新闻
-  const handleSunset = (id) => {
+  const handleSunset = id => {
     // console.log("下线", id);
     uploadPage(id);
     axios
@@ -49,7 +49,7 @@ export default function usePublish(type) {
   };
 
   // 发布新闻
-  const handlePublish = (id) => {
+  const handlePublish = id => {
     // console.log("发布", id);
     uploadPage(id);
     axios
@@ -63,7 +63,7 @@ export default function usePublish(type) {
   };
 
   // 删除新闻
-  const handleDelete = (id) => {
+  const handleDelete = id => {
     // console.log("撤销", id);
     uploadPage(id);
     axios.delete(`/news/${id}`).then(() => {

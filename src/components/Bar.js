@@ -7,16 +7,17 @@ export default function Bar() {
   const [chart, setChart] = useState(null);
   // 初始化数据
   useEffect(() => {
-    axios.get("/news?publishState=2&_expand=category").then((res) => {
-      renderBarView(_.groupBy(res.data, (item) => item.category.title));
+    axios.get("/news?publishState=2&_expand=category").then(res => {
+      renderBarView(_.groupBy(res.data, item => item.category.title));
     });
+
     return () => {
       window.onresize = null;
     };
   }, []);
 
   //初始化
-  const renderBarView = (dataOBJ) => {
+  const renderBarView = dataOBJ => {
     let myChart;
     if (!chart) {
       myChart = echarts.init(document.getElementById("bar"));
@@ -46,7 +47,7 @@ export default function Bar() {
         {
           name: "数量",
           type: "bar",
-          data: Object.values(dataOBJ).map((item) => item.length),
+          data: Object.values(dataOBJ).map(item => item.length),
         },
       ],
     };
@@ -56,7 +57,5 @@ export default function Bar() {
     };
   };
 
-  return (
-    <div id="bar" style={{ marginTop: 100, width: "90%", height: 400 }}></div>
-  );
+  return <div id="bar" style={{ marginTop: 100, width: "90%", height: 400 }}></div>;
 }

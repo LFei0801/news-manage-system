@@ -18,7 +18,7 @@ export default function Pie({ news }) {
       myChart = chart;
     }
 
-    const data = _.groupBy(news, (item) => item.category.title);
+    const data = _.groupBy(news, item => item.category.title);
     const newsList = [];
     for (let key in data) {
       newsList.push({ name: key, value: data[key].length });

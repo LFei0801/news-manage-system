@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table, Tag, Button, Modal, Tree } from "antd";
-import {
-  DeleteOutlined,
-  EditOutlined,
-  ExclamationCircleOutlined,
-} from "@ant-design/icons";
+import { DeleteOutlined, EditOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 import axios from "axios";
 
 export default function RoleList() {
@@ -45,16 +41,16 @@ export default function RoleList() {
     {
       title: "ID",
       dataIndex: "id",
-      render: (id) => <b>{id}</b>,
+      render: id => <b>{id}</b>,
     },
     {
       title: "角色管理员",
       dataIndex: "roleName",
-      render: (roleName) => <Tag color="green">{roleName}</Tag>,
+      render: roleName => <Tag color="green">{roleName}</Tag>,
     },
     {
       title: "操作",
-      render: (item) => (
+      render: item => (
         <div>
           {/* 编辑按钮 */}
           <Button
@@ -81,7 +77,7 @@ export default function RoleList() {
   ];
 
   // 展示确认框
-  const showConfirm = (item) =>
+  const showConfirm = item =>
     Modal.confirm({
       title: "你确定要删该项吗？",
       content: "删除后无法恢复！请谨慎使用",
@@ -94,16 +90,14 @@ export default function RoleList() {
 
   // 删除表格的行
   const deleteMethod = ({ id }) => {
-    setDatasource((prevData) => prevData.filter((data) => data.id !== id));
+    setDatasource(prevData => prevData.filter(data => data.id !== id));
     axios.delete(`/roles/${id}`);
   };
 
   const handleOk = () => {
     // 更新前端页面
-    setDatasource((prevData) =>
-      prevData.map((data) =>
-        data.id === currentId ? { ...data, rights: currentRights } : data
-      )
+    setDatasource(prevData =>
+      prevData.map(data => (data.id === currentId ? { ...data, rights: currentRights } : data))
     );
     setIsModalVisible(false);
     // 更新后端数据
@@ -115,27 +109,16 @@ export default function RoleList() {
 
   return (
     <>
-      <Modal
-        title="权限分配"
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
+      <Modal title="权限分配" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
         <Tree
           checkable
           treeData={treeData}
           checkedKeys={currentRights}
-          onCheck={(checkedRights) =>
-            setCurrentRights(() => checkedRights.checked)
-          }
+          onCheck={checkedRights => setCurrentRights(() => checkedRights.checked)}
           checkStrictly={true}
         />
       </Modal>
-      <Table
-        dataSource={dataSource}
-        columns={columns}
-        rowKey={(item) => item.id}
-      />
+      <Table dataSource={dataSource} columns={columns} rowKey={item => item.id} />
     </>
   );
 }

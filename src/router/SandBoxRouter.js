@@ -41,10 +41,7 @@ function SandBoxRouter({ isLoading }) {
   const [backRouteList, setBackRouteList] = useState([]);
   useEffect(() => {
     const getRouteList = async () => {
-      const res = await Promise.all([
-        axios.get("/rights"),
-        axios.get("/children"),
-      ]);
+      const res = await Promise.all([axios.get("/rights"), axios.get("/children")]);
       setBackRouteList([...res[0].data, ...res[1].data]);
     };
     getRouteList();
@@ -54,7 +51,7 @@ function SandBoxRouter({ isLoading }) {
     role: { rights },
   } = JSON.parse(localStorage.getItem("token"));
 
-  const checkPermission = (item) => {
+  const checkPermission = item => {
     return (
       LocalRouterMap[item.key] &&
       (item.pagepermisson === 1 || item.routepermisson === 1) &&
@@ -65,7 +62,7 @@ function SandBoxRouter({ isLoading }) {
   return (
     <Spin size="large" spinning={isLoading}>
       <Switch>
-        {backRouteList.map((item) => {
+        {backRouteList.map(item => {
           if (checkPermission(item)) {
             return (
               <Route

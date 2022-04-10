@@ -15,13 +15,7 @@ export default function IndexRouter() {
         {/* 没有授权时就重定向到登录界面 */}
         <Route
           path="/"
-          render={() =>
-            localStorage.getItem("token") ? (
-              <NewsSandBox />
-            ) : (
-              <Redirect to="login" />
-            )
-          }
+          render={() => (localStorage.getItem("token") ? <NewsSandBox /> : <Redirect to="login" />)}
         />
       </Switch>
     </BrowserRouter>

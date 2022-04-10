@@ -2,7 +2,7 @@ import axios from "axios";
 import { CHANGE_LOADING } from "../redux/const";
 import { store } from "../redux/store";
 
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "http://localhost:8080";
 
 // 添加请求拦截器
 axios.interceptors.request.use(
