@@ -4,39 +4,39 @@
 
 ### 1. 首页
 
-[images](https://github.com/LFei0801/news-manage-system/blob/master/images/news.png)
+![images](https://github.com/LFei0801/news-manage-system/blob/master/images/news.png)
 
 ### 2. 用户列表
 
-[images](https://github.com/LFei0801/news-manage-system/blob/master/images/home.jpg)
+![images](https://github.com/LFei0801/news-manage-system/blob/master/images/home.jpg)
 
 ### 3. 权限管理
 
 #### 3.1 角色列表
 
-[images](https://github.com/LFei0801/news-manage-system/blob/master/images/role.jpg)
+![images](https://github.com/LFei0801/news-manage-system/blob/master/images/role.jpg)
 
 #### 3.2 权限列表
 
-[images](https://github.com/LFei0801/news-manage-system/blob/master/images/right.jpg)
+![images](https://github.com/LFei0801/news-manage-system/blob/master/images/right.jpg)
 
 ### 4. 新闻管理
 
 #### 4.1 撰写新闻
 
-[images](https://github.com/LFei0801/news-manage-system/blob/master/images/draft.jpg)
+![images](https://github.com/LFei0801/news-manage-system/blob/master/images/draft.jpg)
 
 #### 4.2 新闻分类
 
-[images](https://github.com/LFei0801/news-manage-system/blob/master/images/category.jpg)
+![images](https://github.com/LFei0801/news-manage-system/blob/master/images/category.jpg)
 
 ### 5. 审核管理
 
-[images](https://github.com/LFei0801/news-manage-system/blob/master/images/category.jpg)
+![images](https://github.com/LFei0801/news-manage-system/blob/master/images/category.jpg)
 
 ### 6. 发布管理
 
-[images](https://github.com/LFei0801/news-manage-system/blob/master/images/published.jpg)
+![images](https://github.com/LFei0801/news-manage-system/blob/master/images/published.jpg)
 
 ## 项目使用技术：
 
